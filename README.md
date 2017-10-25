@@ -14,7 +14,7 @@ Install the Google Cloud SDK. See https://cloud.google.com/sdk/docs/.
 Running in development
 ----------------------
 
-Start the development server
+Start the App Engine development server
 
     dev_appserver.py app.yaml
 
