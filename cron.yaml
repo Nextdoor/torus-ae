@@ -1,0 +1,5 @@
+cron:
+- description: New questions digest
+  url: /v1/admin/digest
+  schedule: every day 10:00
+  timezone: America/Los_Angeles

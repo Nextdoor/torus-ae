@@ -1,0 +1,33 @@
+runtime: go
+api_version: go1
+
+handlers:
+- url: /static
+  static_dir: frontend/static
+
+- url: /favicon.ico
+  static_files: frontend/favicon.ico
+  upload: frontend/favicon.ico
+
+- url: /asset-manifest.json
+  static_files: frontend/asset-manifest.json
+  upload: frontend/asset-manifest.json
+
+- url: /manifest.json
+  static_files: frontend/manifest.json
+  upload: frontend/manifest.json
+
+- url: /v1/admin/.*
+  login: admin
+  auth_fail_action: unauthorized
+  script: _go_app
+
+- url: /v1/.*
+  login: required
+  auth_fail_action: unauthorized
+  script: _go_app
+
+- url: /.*
+  login: required
+  static_files: frontend/index.html
+  upload: frontend/index.html
